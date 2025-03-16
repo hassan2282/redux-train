@@ -1,7 +1,13 @@
-const Reducer = (RandomNum = [], action) => {
-    return RandomNum
+const initialState = [];
 
-    console.log(RandomNum)
-}
+const Reducer = (state = initialState, action) => {
+    switch(action.type) {
+        case "ADD":
+            console.log(state)
+            return [...state, action.payload];
+        default:
+            return state;
+    }
+};
 
 export default Reducer;
